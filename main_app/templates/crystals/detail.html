@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h1>Crystal Details</h1>
+
+  <div class="card">
+    <div class="card-content">
+        <!-- <div class="card-image">
+         <img src="images/sample-1.jpg"> -->
+      
+      <span class="card-title">{{ crystal.name }}</span>
+      <p>Color: {{ crystal.color }}</p>
+      <p>Properties: {{ crystal.properties|linebreaks }}</p>
+      <p>Associated Shakra: {{ crystal.shakra }}</p>
+
+      {% if crystal.mohs > 0 %}
+        <p>Mohs Hardness Scale: {{ crystal.mohs }}</p>
+      {% else %}
+        <p>Talc, Gypsum, or Calcite?</p>
+      {% endif %} 
+    </div>
+  </div>
+
+
+{% endblock %}

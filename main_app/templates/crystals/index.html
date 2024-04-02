@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h1>Crystals Collection</h1>
+
+{% for crystal in crystals %}
+  <div class="row">
+    <div class="col s12 m7">
+      <div class="card">
+        <div class="card-image">
+          <img src="images/sample-1.jpg">
+          <span class="card-title" style="color:black">{{ crystal.name }}</span>
+        </div>
+        <div class="card-content">
+          <p>Associated Shakra: {{ crystal.shakra }}</p>
+        </div>
+        <div class="card-action">
+          <a href="{%  url 'detail' crystal.id %}">Details</a>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endfor %}
+
+{% endblock %}
