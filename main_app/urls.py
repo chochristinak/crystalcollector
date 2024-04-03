@@ -16,4 +16,6 @@ urlpatterns = [
   path('crystals/<int:pk>/update/', views.CrystalUpdate.as_view(), name='crystals_update'),
 
   path('crystals/<int:pk>/delete/', views.CrystalDelete.as_view(), name='crystals_delete'),
+
+  path('crystals/<int:crystal_id>/add_reading/', views.add_reading, name='add_reading'),
 ]

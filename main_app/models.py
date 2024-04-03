@@ -1,6 +1,11 @@
 from django.db import models
 from django.urls import reverse
-
+REASONS = (
+    ('H', 'Health'),
+    ('E', 'Emotional'),
+    ('S', 'Spiritual'),
+    ('C', 'Career'),
+)
 # Create your models here.
 
 class Crystal(models.Model):
@@ -17,5 +22,13 @@ class Crystal(models.Model):
     def get_absolute_url(self):
         return reverse('detail', kwargs={'crystal_id': self.id})
        
-
-       
+class Reading(models.Model):
+    date = date = models.DateField('reading date')
+    reason = models.CharField(
+        max_length=50,
+        choices = REASONS)
+    crystal = models.ForeignKey(Crystal, on_delete=models.CASCADE)
+    
+    def __str__(self):
+        return f"{self.get_reason_display()} on {self.date}"
+   

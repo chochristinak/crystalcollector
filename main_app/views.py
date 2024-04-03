@@ -1,6 +1,8 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from .models import Crystal
+from .forms import ReadingForm
+
 
 
 # Create your views here.
@@ -18,10 +20,19 @@ def crystals_index(request):
                    })
 def crystals_detail(request, crystal_id):
   crystal = Crystal.objects.get(id=crystal_id)
+  reading_form = ReadingForm()
   return render(request, 'crystals/detail.html', 
                 {
-                'crystal': crystal
+                'crystal': crystal, 'reading_form': reading_form
                 })
+
+def add_reading(request, crystal_id):
+    form = ReadingForm(request.POST)
+    if form.is_valid():
+     new_reading = form.save(commit=False)
+     new_reading.crystal_id = crystal_id
+     new_reading.save()
+    return redirect('detail', crystal_id=crystal_id)
   
 class CrystalCreate(CreateView):
   model = Crystal
