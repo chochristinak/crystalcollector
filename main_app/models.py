@@ -9,9 +9,10 @@ class Crystal(models.Model):
     properties = models.TextField(max_length=250)
     shakra = models.CharField(max_length=50)
     mohs = models.IntegerField()
+    image = models.URLField(blank=True)
 
     def __str__(self):
-        return self.name
+        return f'{self.name} ({self.id})'
     
     def get_absolute_url(self):
         return reverse('detail', kwargs={'crystal_id': self.id})

@@ -5,13 +5,11 @@
 
   <div class="card">
     <div class="card-content">
-        <!-- <div class="card-image">
-         <img src="images/sample-1.jpg"> -->
-      
       <span class="card-title">{{ crystal.name }}</span>
       <p>Color: {{ crystal.color }}</p>
       <p>Properties: {{ crystal.properties|linebreaks }}</p>
       <p>Associated Shakra: {{ crystal.shakra }}</p>
+      <img src=" {{crystal.image }} " class="detail-img">
 
       {% if crystal.mohs > 0 %}
         <p>Mohs Hardness Scale: {{ crystal.mohs }}</p>
@@ -19,6 +17,10 @@
         <p>Talc, Gypsum, or Calcite?</p>
       {% endif %} 
     </div>
+    <div class="card-action">
+        <a href="{% url 'crystals_update' crystal.id %}">Edit</a>
+        <a href="{% url 'crystals_delete' crystal.id %}">Delete</a>
+      </div>
   </div>
 
 
