@@ -1,3 +1,40 @@
+#sidenav-overlay { 
+  display: none;
+ }
+ 
+.logo-img{
+  width: 150px;
+  height: 150px;
+  object-fit: fill;
+  object-position: center;
+  align-items: center;
+  border-radius: 50%;
+  padding-bottom: 0;
+}
+div.nav{
+  height: 80px;
+
+}
+.dropdown-logo-img {
+  width: 70px;
+  height: 70px;
+  object-fit: contain;
+  object-position: center;
+  align-items: center;
+  border-radius: 50%;
+
+}
+
+header, main, footer {
+  padding-left: 200px;
+}
+
+@media only screen and (max-width : 992px) {
+  header, main, footer {
+    padding-left: 0;
+  }
+}
+      
 body {
     display: flex;
     min-height: 100vh;

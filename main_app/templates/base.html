@@ -12,23 +12,47 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 </head>
 <body>
+  <ul id="slide-out" class="sidenav">
+          
+    <ul class="center">
+      <div>
+        <a href="{% url 'home' %}"><img src="https://totemsurftribe.files.wordpress.com/2024/04/crystalcollectorlogo.png?resize=438%2C438" class="logo-img">
+          </a>
+          </div>
+      <li><a href="{%  url 'about' %}">About</a></li>
+      <li><a href="{%  url 'crystals_create' %}">Add A Crystal</a></li>
+      <li><a href="{%  url 'index' %}">View All Crystals</a></li>
+    </ul>
+  </ul>
   <header class="navbar-fixed">
     <nav>
       <div class="nav-wrapper">
-        <ul>
-          <li><a href="{% url 'home' %}" class="left brand-logo" img src="https://totemsurftribe.files.wordpress.com/2024/04/crystalcollectorlogo.png?resize=438%2C438"></a></li>
-        </ul>
-        <ul class="right">
-          <li><a href="{%  url 'about' %}">About</a></li>
-          <li><a href="{%  url 'crystals_create' %}">Add A Crystal</a></li>
-          <li><a href="{%  url 'index' %}">View All Crystals</a></li>
-        </ul>
-      </div>
-    </nav>
+
+        <nav> <!-- navbar content here  --> </nav>    
+
+        <a href="#" data-target="slide-out" class="sidenav-trigger"><i class="waves-effect"><img src="https://totemsurftribe.files.wordpress.com/2024/04/crystalcollectorlogo.png?resize=438%2C438" class="dropdown-logo-img"></i></a>
   </header>
+
+
+
   <main class="container">
     {% block content %}
     {% endblock %}
+
+  <script>
+
+document.addEventListener('DOMContentLoaded', function() {
+    const navEl = document.querySelector('.sidenav');
+    var instances = M.Sidenav.init(navEl, {
+
+    })
+
+  var collapsibleElem = document.querySelector('.collapsible');
+   var collapsibleInstance = M.Collapsible.init(collapsibleElem, options);
+  
+  });
+
+    </script>
   </main>
 
 
