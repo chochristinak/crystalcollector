@@ -1,5 +1,9 @@
+
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 {% extends 'base.html' %}
 {% block content %}
+
+
 
 <h1>Crystals Collection</h1>
 
@@ -15,7 +19,11 @@
           <p>Associated Shakra: {{ crystal.shakra }}</p>
         </div>
         <div class="card-action">
-          <a href="{%  url 'detail' crystal.id %}">Details</a>
+          <a href="{%  url 'detail' crystal.id %}"><i class="material-icons">list</i></a>
+
+          <a href="#" class="like" data-crystal-id="{{ music.id }}">
+            <i class="material-icons">favorite_border</i> 
+        </a>
         </div>
       </div>
     </div>

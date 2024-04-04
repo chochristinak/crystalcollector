@@ -1,18 +1,31 @@
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
 {% extends 'base.html' %}
 
 {% block content %}
-  <h1>About the Crystal Collector</h1>
-  <p>"In turbulent times, many of us harness grounding tools; tangible ways to calm anxiety and soothe stress..." </p>
-  <hr />
 
+
+<div class ="center">
+  <h1>About the Crystal Collector</h1>
+  <p>"In turbulent times, we can utilize grounding, tangible tangible tools to calm anxiety and soothe stress - like Crystals. </p>
+  
+</div>
+</div>
+  <hr />
+    <h2 class="center">Crystal Healing</h2>
   <div class="carousel carousel-slider">
-    <a class="carousel-item" href="#one!"><img src="https://lorempixel.com/800/400/food/1"></a>
-    <a class="carousel-item" href="#two!"><img src="https://lorempixel.com/800/400/food/2"></a>
-    <a class="carousel-item" href="#three!"><img src="https://lorempixel.com/800/400/food/3"></a>
-    <a class="carousel-item" href="#four!"><img src="https://lorempixel.com/800/400/food/4"></a>
+    <a class="carousel-item" href="#one!">Promote Good Energy<img src="https://lorempixel.com/800/400/food/1"></a>
+    <a class="carousel-item" href="#two!">Help Manifest<img src="https://lorempixel.com/800/400/food/2"></a>
+    <a class="carousel-item" href="#three!">Better Sleep<img src="https://lorempixel.com/800/400/food/3"></a>
+    <a class="carousel-item" href="#four!">Physical and Emtional Benefits<img src="https://lorempixel.com/800/400/food/4"></a>
   </div>
   <p>Inquire Now For A Free Initial Reading </p>
- 
+ <script>
+  document.addEventListener('DOMContentLoaded', function() {
+    carouselEl = document.querySelectorAll('.carousel');
+    var instances = M.Carousel.init(carouselEl);
+  });
+ </script>
 {% endblock %}
 
 <footer>All Rights Reserved, &copy; 2024 Crystal Collector</footer>  

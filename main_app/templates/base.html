@@ -22,6 +22,8 @@
       <li><a href="{%  url 'about' %}">About</a></li>
       <li><a href="{%  url 'crystals_create' %}">Add A Crystal</a></li>
       <li><a href="{%  url 'index' %}">View All Crystals</a></li>
+      <li><a href="">Browse Collections</a></li>
+      <li><a href="">Shop</a></li>
     </ul>
   </ul>
   <header class="navbar-fixed">
@@ -29,8 +31,20 @@
       <div class="nav-wrapper">
 
         <nav> <!-- navbar content here  --> </nav>    
+        <ul id="slide-out" class="sidenav sidenav-fixed">
+          
+          <ul class="center">
+            <div>
+              <a href="{% url 'home' %}"><img src="https://totemsurftribe.files.wordpress.com/2024/04/crystalcollectorlogo.png?resize=438%2C438" class="logo-img">
+                </a>
+                </div>
+            <li><a href="{%  url 'about' %}">About</a></li>
+            <li><a href="{%  url 'crystals_create' %}">Add A Crystal</a></li>
+            <li><a href="{%  url 'index' %}">View All Crystals</a></li>
+          </ul>
+        </ul>
 
-        <a href="#" data-target="slide-out" class="sidenav-trigger"><i class="waves-effect"><img src="https://totemsurftribe.files.wordpress.com/2024/04/crystalcollectorlogo.png?resize=438%2C438" class="dropdown-logo-img"></i></a>
+        <a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>
   </header>
 
 

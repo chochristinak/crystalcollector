@@ -1,23 +1,39 @@
+
+body {
+  font-family: 'Tahoma, serif';
+}
+nav, header.navbar-fixed, footer.page-footer{
+  background-color: rgb(205, 192, 117);
+}
+.page-footer{
+  align-items: baseline;
+  padding-bottom: 0;
+}
+ul#slide-out.sidenav{
+  border-style: groove;
+  width: 222px;
+}
+div.nav-wrapper{
+  height: 80px
+
+}
 #sidenav-overlay { 
   display: none;
  }
- 
+
 .logo-img{
-  width: 150px;
-  height: 150px;
-  object-fit: fill;
+  width: 160px;
+  height: 160px;
+  object-fit: contain;
   object-position: center;
   align-items: center;
   border-radius: 50%;
   padding-bottom: 0;
 }
-div.nav{
-  height: 80px;
 
-}
 .dropdown-logo-img {
-  width: 70px;
-  height: 70px;
+  width: 66px;
+  height: 66px;
   object-fit: contain;
   object-position: center;
   align-items: center;
@@ -26,7 +42,7 @@ div.nav{
 }
 
 header, main, footer {
-  padding-left: 200px;
+  padding-left: 100px;
 }
 
 @media only screen and (max-width : 992px) {
