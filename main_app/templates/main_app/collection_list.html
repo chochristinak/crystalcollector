@@ -1,0 +1,22 @@
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+{% extends 'base.html' %}
+{% block content %}
+
+<h1>All Collections</h1>
+
+{% for collection in collection_list %}
+
+  <a href="{% url 'collections_detail' collection.id %}">
+    <div class="card">
+        <div class="card-content">
+            <span class="card-title" style="color:black">{{ collection.name }}</span>
+            <p><img src="{{collection.image}}" class="collection-img"></p>
+        </div>
+    </div>
+  </a>
+
+{% endfor %}
+
+
+
+{% endblock %}

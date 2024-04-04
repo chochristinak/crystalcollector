@@ -1,33 +1,34 @@
-
-<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-{% extends 'base.html' %}
-{% block content %}
-
-
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+{% extends 'base.html' %} {% block content %}
 
 <h1>Crystals Collection</h1>
 
 {% for crystal in crystals %}
-  <div class="row">
-    <div class="col s12 m7">
-      <div class="card">
-        <div class="card-image">
-          <img src=" {{crystal.image }} ">
-          <span class="card-title" style="color:black">{{ crystal.name }}</span>
-        </div>
-        <div class="card-content">
-          <p>Associated Shakra: {{ crystal.shakra }}</p>
-        </div>
-        <div class="card-action">
-          <a href="{%  url 'detail' crystal.id %}"><i class="material-icons">list</i></a>
+<div class="row">
+  <div class="col s12 m7">
+    <div class="card">
+      <div class="card-image">
+        <img src=" {{crystal.image }} " />
+        <span class="card-title" style="color: black">{{ crystal.name }}</span>
+      </div>
+      <div class="card-content">
+        <p>Assicated Zodiac: {{crystal.zodiac}}</p>
+      </div>
+      <div class="card-action">
+        <a href="{%  url 'detail' crystal.id %}"><i class="material-icons">list</i></a>
 
-          <a href="#" class="like" data-crystal-id="{{ music.id }}">
-            <i class="material-icons">favorite_border</i> 
+        <a href="#" class="favorite" data-crystal-id="{{ crystal.id }}">
+          <i class="material-icons">favorite_border</i>
         </a>
-        </div>
       </div>
     </div>
   </div>
-{% endfor %}
+</div>
 
-{% endblock %}
+
+
+  
+</div>
+
+
+{% endfor %} {% endblock %}

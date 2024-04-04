@@ -22,8 +22,9 @@
       <li><a href="{%  url 'about' %}">About</a></li>
       <li><a href="{%  url 'crystals_create' %}">Add A Crystal</a></li>
       <li><a href="{%  url 'index' %}">View All Crystals</a></li>
-      <li><a href="">Browse Collections</a></li>
-      <li><a href="">Shop</a></li>
+      <li><a href="">Favorites</a></li>
+      <li><a href="{% url 'collections_create' %}">Create Unique Collection</a></li>
+      <li><a href="{% url 'collections_index' %}">Browse All Collections</a></li>
     </ul>
   </ul>
   <header class="navbar-fixed">

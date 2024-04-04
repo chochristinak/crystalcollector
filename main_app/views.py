@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
-from .models import Crystal
+from django.views.generic import ListView, DetailView
+from .models import Crystal, Collection
 from .forms import ReadingForm
 
 
@@ -20,11 +21,23 @@ def crystals_index(request):
                    })
 def crystals_detail(request, crystal_id):
   crystal = Crystal.objects.get(id=crystal_id)
+  id_list = crystal.collections.all().values_list('id')
+  not_in_collection = Collection.objects.exclude(id__in=id_list)
   reading_form = ReadingForm()
   return render(request, 'crystals/detail.html', 
                 {
-                'crystal': crystal, 'reading_form': reading_form
+                'crystal': crystal, 
+                'reading_form': reading_form,
+                'collections': not_in_collection
                 })
+                
+def assoc_collection(request, crystal_id, collection_id):
+  Crystal.objects.get(id=crystal_id).collections.add(collection_id)
+  return redirect('detail', crystal_id=crystal_id)
+
+def remove_assoc_collection(request, crystal_id, collection_id):
+  Crystal.objects.get(id=crystal_id).collections.remove(collection_id)
+  return redirect('detail', crystal_id=crystal_id )
 
 def add_reading(request, crystal_id):
     form = ReadingForm(request.POST)
@@ -36,13 +49,31 @@ def add_reading(request, crystal_id):
   
 class CrystalCreate(CreateView):
   model = Crystal
-  fields = '__all__'
+  fields = ['name', 'color', 'properties', 'image', 'zodiac']
 
 class CrystalUpdate(UpdateView):
   model = Crystal
-  fields = ['color', 'properties', 'shakra', 'mohs', 'image']
+  fields = ['color', 'properties', 'image', 'zodiac']
 
 class CrystalDelete(DeleteView):
   model = Crystal
   success_url = '/crystals'
+
+class CollectionList(ListView):
+  model = Collection
+
+class CollectionDetail(DetailView):
+  model = Collection
+
+class CollectionCreate(CreateView):
+  model = Collection
+  fields = '__all__'
+
+class CollectionUpdate(UpdateView):
+  model = Collection
+  fields = ['name', 'image']
+
+class CollectionDelete(DeleteView):
+  model = Collection
+  success_url = '/collections'
   

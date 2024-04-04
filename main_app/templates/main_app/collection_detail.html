@@ -1,0 +1,80 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h1>{{ collection.name }} Details</h1>
+
+<div class="row">
+  <div class="col s6 col-offset-3">
+    <div class="card">
+      <div class="card-content">
+        <span class="card-title">{{ collection.name }}</span>
+        <p><img src="{{ collection.image }}" class="collection-img"></p>
+      </div>
+      <div class="card-action">
+        <a href="{% url 'collections_update' collection.id %}">Edit</a>
+        <a href="{% url 'collections_delete' collection.id %}">Delete</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<!-- 
+
+
+<hr>
+<div class="row">
+  <div class="col s6">
+    <h5>{{ collection.name }} has the following Crystals</h5>
+    {% if collection.crystals.count %}
+    {% for collection in collection.crystals.all %}
+    <div class="card">
+      <div class="card-content">
+        <span class="card-title">
+          <span>{{ crystal.name }}</span> <img src="{{ crystal.image }}" class="detail-img">
+        </span>
+      </div>
+      <div class="card-action">
+        <form action="{% url 'remove_assoc_crystal' collection.id crystal.id %}" method="POST">
+          {% csrf_token %}
+          <button type="submit" class="btn">Remove</button>
+
+        </form>
+      </div>
+    </div>
+    {% endfor %}
+    {% else %}
+    <h5>No Crystals in this Collection Yet</h5>
+    {% endif %}
+  </div>
+
+
+  <div class="col s6">
+    <h4>Crystals in this Collection</h4>
+    {% if crystals.count %}
+    {% for crystal in crystals.all %}
+    <div class="card">
+      <div class="card-content">
+        <span class="card-title">
+          A <span>{{ crystal.name }}</span> <img src="{{ crystal.image }}" class="detail-img">
+        </span>
+      </div>
+      <div class="card-action">
+        <form action="{% url 'assoc_crystal' collection.id crystal.id %}" method="POST">
+          {% csrf_token %}
+          <button type="submit" class="btn">Add</button>
+        </form>
+      </div>
+    </div>
+    {% endfor %}
+    {% else %}
+    <h5>{{collection.name}} has all Crystals</h5>
+    {% endif %}
+
+
+
+
+  </div>
+</div> -->
+{% endblock %}
