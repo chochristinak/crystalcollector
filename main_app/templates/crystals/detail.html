@@ -49,7 +49,7 @@
   <div class="col s6">
     <h5>{{ crystal.name }} is in</h5>
     {% if crystal.collections.count %}
-    {% for crystal in crystal.collections.all %}
+    {% for collection in crystal.collections.all %}
     <div class="card">
       <div class="card-content">
         <span class="card-title">

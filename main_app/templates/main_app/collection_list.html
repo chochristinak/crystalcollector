@@ -6,14 +6,14 @@
 
 {% for collection in collection_list %}
 
-  <a href="{% url 'collections_detail' collection.id %}">
-    <div class="card">
-        <div class="card-content">
-            <span class="card-title" style="color:black">{{ collection.name }}</span>
-            <p><img src="{{collection.image}}" class="collection-img"></p>
-        </div>
+<a href="{% url 'collections_detail' collection.id %}">
+  <div class="card">
+    <div class="card-content">
+      <span class="card-title" style="color:black">{{ collection.name }}</span>
+      <p><img src="{{collection.image}}" class="collection-img"></p>
     </div>
-  </a>
+  </div>
+</a>
 
 {% endfor %}
 

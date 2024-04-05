@@ -2,27 +2,31 @@
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="icon" type="image/x-icon" href="https://cdn-icons-png.flaticon.com/128/3426/3426146.png">
   <title>Crystal Collector</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
   <link rel="stylesheet" href="{% static 'css/style.css' %}">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 </head>
+
 <body>
   <ul id="slide-out" class="sidenav">
-          
+
     <ul class="center">
       <div>
-        <a href="{% url 'home' %}"><img src="https://totemsurftribe.files.wordpress.com/2024/04/crystalcollectorlogo.png?resize=438%2C438" class="logo-img">
-          </a>
-          </div>
+        <a href="{% url 'home' %}"><img
+            src="https://totemsurftribe.files.wordpress.com/2024/04/crystalcollectorlogo.png?resize=438%2C438"
+            class="logo-img">
+        </a>
+      </div>
       <li><a href="{%  url 'about' %}">About</a></li>
       <li><a href="{%  url 'crystals_create' %}">Add A Crystal</a></li>
       <li><a href="{%  url 'index' %}">View All Crystals</a></li>
-      <li><a href="">Favorites</a></li>
       <li><a href="{% url 'collections_create' %}">Create Unique Collection</a></li>
       <li><a href="{% url 'collections_index' %}">Browse All Collections</a></li>
     </ul>
@@ -31,17 +35,21 @@
     <nav>
       <div class="nav-wrapper">
 
-        <nav> <!-- navbar content here  --> </nav>    
+        <nav> <!-- navbar content here  --> </nav>
         <ul id="slide-out" class="sidenav sidenav-fixed">
-          
+
           <ul class="center">
             <div>
-              <a href="{% url 'home' %}"><img src="https://totemsurftribe.files.wordpress.com/2024/04/crystalcollectorlogo.png?resize=438%2C438" class="logo-img">
-                </a>
-                </div>
+              <a href="{% url 'home' %}"><img
+                  src="https://totemsurftribe.files.wordpress.com/2024/04/crystalcollectorlogo.png?resize=438%2C438"
+                  class="logo-img">
+              </a>
+            </div>
             <li><a href="{%  url 'about' %}">About</a></li>
             <li><a href="{%  url 'crystals_create' %}">Add A Crystal</a></li>
             <li><a href="{%  url 'index' %}">View All Crystals</a></li>
+            <li><a href="{% url 'collections_create' %}">Create Unique Collection</a></li>
+            <li><a href="{% url 'collections_index' %}">Browse All Collections</a></li>
           </ul>
         </ul>
 
@@ -54,18 +62,18 @@
     {% block content %}
     {% endblock %}
 
-  <script>
+    <script>
 
-document.addEventListener('DOMContentLoaded', function() {
-    const navEl = document.querySelector('.sidenav');
-    var instances = M.Sidenav.init(navEl, {
+      document.addEventListener('DOMContentLoaded', function () {
+        const navEl = document.querySelector('.sidenav');
+        var instances = M.Sidenav.init(navEl, {
 
-    })
+        })
 
-  var collapsibleElem = document.querySelector('.collapsible');
-   var collapsibleInstance = M.Collapsible.init(collapsibleElem, options);
-  
-  });
+        var collapsibleElem = document.querySelector('.collapsible');
+        var collapsibleInstance = M.Collapsible.init(collapsibleElem, options);
+
+      });
 
     </script>
   </main>
@@ -75,9 +83,10 @@ document.addEventListener('DOMContentLoaded', function() {
     <div class="container">
       <div class="row">
         <div class="right">All Rights Reserved, &copy; 2024 Crystal Collector &nbsp;
-          </div>
         </div>
+      </div>
     </div>
   </footer>
 </body>
+
 </html>

@@ -32,7 +32,6 @@ class Crystal(models.Model):
     def get_absolute_url(self):
         return reverse('detail', kwargs={'crystal_id': self.id})
     
-
        
 class Reading(models.Model):
     date = date = models.DateField('reading date')
