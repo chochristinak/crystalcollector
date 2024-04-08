@@ -1,4 +1,7 @@
 
+.home-img{
+  border-radius: 50%;
+}
 body {
   font-family: 'Tahoma, serif';
 }
@@ -20,6 +23,7 @@ div.nav-wrapper{
 #sidenav-overlay { 
   display: none;
  }
+
 .sliding-img{
   width: 340px;
   height: 340px;
